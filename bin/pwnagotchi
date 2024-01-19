@@ -174,7 +174,14 @@ if __name__ == '__main__':
         do_auto_mode(agent)
 
     if args.set_editor:
-        editor = input("Choose your editor (..and make sure it is actually installed): ")
-        set_editor = "export EDITOR="/usr/bin/%s"%(editor)
-        os.system(set_editor)
-        sys.exit(0)
+        editor = input("Choose your editor: ")
+        try: #check if there is anything actually there.
+            os.path.isfile('/usr/bin/%s'%editor)
+        except: #there isn't a file/program there, or something goes wrong.
+            print("There is no program at that location. It may not be installed, or you might have given the path to a directory")
+        else: #there is a file/program there
+            editor_path = "/usr/bin/%s"%(editor)
+            set_editor = "export EDITOR=%s"%(editor_path) #This is a bad way to do it, and could definitely be accomplished on one line. But I don't know what I'm doing.
+            os.system(set_editor)
+        finally: #leave this menu
+             sys.exit(0) 
