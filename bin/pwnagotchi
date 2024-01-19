@@ -116,6 +116,9 @@ if __name__ == '__main__':
     parser.add_argument('--print-config', dest="print_config", action="store_true", default=False,
                         help="Print the configuration.")
 
+    parser.add_argument('--set-editor', dest="set_editor", action="store_true", default=False,
+                        help="Set default system editor.")
+
     args = parser.parse_args()
 
 
@@ -169,3 +172,9 @@ if __name__ == '__main__':
         do_manual_mode(agent)
     else:
         do_auto_mode(agent)
+
+    if args.set_editor:
+        editor = input("Choose your editor (..and make sure it is actually installed): ")
+        set_editor = "export EDITOR="/usr/bin/%s"%(editor)
+        os.system(set_editor)
+        sys.exit(0)
