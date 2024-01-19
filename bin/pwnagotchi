@@ -5,6 +5,7 @@ import time
 import signal
 import sys
 import toml
+import os
 
 import pwnagotchi
 from pwnagotchi import utils
