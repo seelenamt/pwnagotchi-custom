@@ -1,11 +1,22 @@
+Customized version of Aluminum-ice's pwnagotchi fork, with a few additional features
+
+* An additional command to set the default system editor from the pwnagotchi service. Default changed to the more newbie friendly Nano editor (Needs testing)
+* Enabling and loading plugins without rebooting, as in the webui, but without using the webui. (WIP)
+* Soft shutdown that updates the display appropriately, as though it was done from the webui. (WIP)
+* Includes PiSugar3 plugin (WIP)
+
+The reason this exists is to make some QoL changes that I want, and to set it so that the PiSugar3's custom buttons call the pwnagotchi's existing shutdown and plugin reload functions. I have almost no idea what I'm doing, so your mileage may vary.
+  
+**Aluminum-Ice fork info follows**
+  
 # Pwnagotchi
 
 <p align="center">
-    <a href="https://github.com/aluminum-ice/pwnagotchi/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/aluminum-ice/pwnagotchi.svg?style=flat-square"></a>
     <a href="https://github.com/evilsocket/pwnagotchi/blob/master/LICENSE.md"><img alt="Software License" src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square"></a>
-    <a href="https://github.com/evilsocket/aluminum-ice/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/aluminum-ice/pwnagotchi"/></a>
     <a href="https://twitter.com/intent/follow?screen_name=pwnagotchi"><img src="https://img.shields.io/twitter/follow/pwnagotchi?style=social&logo=twitter" alt="follow on Twitter"></a>
 </p>
+
+
 
 This is a fork of the [original pwnagotchi project](https://github.com/evilsocket/pwnagotchi). I have heavily updated my fork to enable pwnagotchi to run well on a Raspberry Pi Zero 2 W. Major changes include:
 
